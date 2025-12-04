@@ -7,11 +7,23 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- タイトル ---
-st.title("🌏 Planetary Wellness アプリ選択メニュー")
-st.write("ご利用になるアプリを選択してください👇")
+# ---------------------------
+# 🪐 ヘッダー（ロゴ + タイトル）
+# ---------------------------
+header_col1, header_col2 = st.columns([1, 9])  # 左に少し、右に広く
 
-# --- 2カラムレイアウト ---
+with header_col1:
+    st.image("planet.png", width=90)  # ← ロゴが左上に表示される
+
+with header_col2:
+    st.title("Planetary Wellness アプリ選択メニュー")
+    st.write("ご利用になるアプリを選択してください👇")
+
+st.write("---")  # 区切り線
+
+# ---------------------------
+# アプリの2カラムレイアウト
+# ---------------------------
 col1, col2 = st.columns(2, gap="large")
 
 # --- 不登校・ひきこもり相談エージェント ---
@@ -32,6 +44,5 @@ with col2:
         "https://hattatsu-support-ai-bpr6um2plg4gj28qqczgos.streamlit.app/"
     )
 
-# --- フッター ---
 st.write("---")
-st.caption("© 2025 Planetary Wellness / Developed by Takuya Mori")
+st.caption("© 2025 Planetary Wellness / Developed by TM,TN,IY")
