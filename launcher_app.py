@@ -10,16 +10,21 @@ st.set_page_config(
 # ---------------------------
 # 🪐 ヘッダー（ロゴ + タイトル）
 # ---------------------------
-header_col1, header_col2 = st.columns([1, 9])  # 左に少し、右に広く
+header_col1, header_col2 = st.columns([2, 10])  # ロゴを大きくできる比率
 
 with header_col1:
-    st.image("planet.png", width=90)  # ← ロゴが左上に表示される
+    st.image("planet.png", width=220)   # ← ロゴを大きく表示する
 
 with header_col2:
-    st.title("Planetary Wellness アプリ選択メニュー")
+    st.markdown(
+        """
+        <h1 style='margin-top: 20px;'>Planetary Wellness アプリ選択メニュー</h1>
+        """,
+        unsafe_allow_html=True
+    )
     st.write("ご利用になるアプリを選択してください👇")
 
-st.write("---")  # 区切り線
+st.write("---")
 
 # ---------------------------
 # アプリの2カラムレイアウト
